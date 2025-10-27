@@ -39,7 +39,7 @@ document.querySelector('.remove-row').addEventListener('click', (e) => {
     return;
   }
 
-  table.firstElementChild.remove();
+  table.lastElementChild.remove();
 
   if (rowSize - 1 === MIN) {
     e.target.disabled = true;
@@ -84,7 +84,7 @@ document.querySelector('.remove-column').addEventListener('click', (e) => {
   const columns = document.querySelector('.field tbody').children;
 
   [...columns].forEach((column) => {
-    column.firstElementChild.remove();
+    column.lastElementChild.remove();
   });
 
   if (colSize - 1 === MIN) {
